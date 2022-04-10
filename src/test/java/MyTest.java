@@ -8,6 +8,10 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.junit.jupiter.api.Test;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,5 +47,24 @@ public class MyTest {
         }
 
         mongoClient.close();
+    }
+
+    @Test
+    public void testMysql() throws Exception{
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","123456");
+        Statement state = conn.createStatement();
+        int rows = state.executeUpdate("INSERT INTO `testTable` VALUES ('test2')");
+
+        if(rows > 0) {
+            System.out.println("数据添加成功！");
+        }
+        ResultSet resultSet = state.executeQuery("select * from testTable");
+        while (resultSet.next()){
+            System.out.println(resultSet.getString("name"));
+        }
+
+        state.close();
+        conn.close();
     }
 }
