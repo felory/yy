@@ -1,22 +1,22 @@
-### Jackson JSON library £¨ÒÑ¾­Ä¬ÈÏ°üº¬ÔÚ web starterÖĞ£©
-Ê¹ÓÃjackson¿â£¬½«model class×Ô¶¯·âËÍ³É==¡·JSON¡£
+### Jackson JSON library ï¼ˆå·²ç»é»˜è®¤åŒ…å«åœ¨ web starterä¸­ï¼‰
+ä½¿ç”¨jacksonåº“ï¼Œå°†model classè‡ªåŠ¨å°é€æˆ==ã€‹JSONã€‚
 
-### @RequestParam£¨value="" defaultValue=""£© °ó¶¨queryµÄ²ÎÊıµ½·½·¨Àï¡£
+### @RequestParamï¼ˆvalue="" defaultValue=""ï¼‰ ç»‘å®šqueryçš„å‚æ•°åˆ°æ–¹æ³•é‡Œã€‚
 
-###@RestController ·µ»ØÒ»¸ö¶ÔÏó£¬¶ø²»ÊÇÒ»¸öview£¨ÏñMVC controller£©¡£
-Õâ¸ö¶ÔÏó£¬±ØĞë±»×ª»»ÎªJSON£¨µ½·½·¨ÌåÖĞ£©, Spring¡®HTTP message converter,
-Jackson 2 is on the classpath×Ô¶¯±»Ñ¡ÔñÓÃÀ´×ª»¯¡£
+###@RestController è¿”å›ä¸€ä¸ªå¯¹è±¡ï¼Œè€Œä¸æ˜¯ä¸€ä¸ªviewï¼ˆåƒMVC controllerï¼‰ã€‚
+è¿™ä¸ªå¯¹è±¡ï¼Œå¿…é¡»è¢«è½¬æ¢ä¸ºJSONï¼ˆåˆ°æ–¹æ³•ä½“ä¸­ï¼‰, Springâ€˜HTTP message converter,
+Jackson 2 is on the classpathè‡ªåŠ¨è¢«é€‰æ‹©ç”¨æ¥è½¬åŒ–ã€‚
 
 
 
 ####
-Ê¹ÓÃ³Ö¾Ã»¯¹¤¾ßµÄÊ±ºò£¬Ò»°ã¶¼ÓĞÒ»¸ö¡¾¶ÔÏó¡¿À´²Ù×÷Êı¾İ¿â£¬
-* ÔÚÔ­ÉúµÄHibernateÖĞ½Ğ×öSession£¬
-* ÔÚJPAÖĞ½Ğ×öEntityManager£¬
-* ÔÚMyBatisÖĞ½Ğ×öSqlSession
+ä½¿ç”¨æŒä¹…åŒ–å·¥å…·çš„æ—¶å€™ï¼Œä¸€èˆ¬éƒ½æœ‰ä¸€ä¸ªã€å¯¹è±¡ã€‘æ¥æ“ä½œæ•°æ®åº“ï¼Œ
+* åœ¨åŸç”Ÿçš„Hibernateä¸­å«åšSessionï¼Œ
+* åœ¨JPAä¸­å«åšEntityManagerï¼Œ
+* åœ¨MyBatisä¸­å«åšSqlSession
 
 
-#### ÓÉÓÚSpring bootÄ¬ÈÏÒÑ¾­¼¯³ÉÁËHibernate, ËùÔÚÎÒÃÇÖ»ĞèÔÚpom.xmlÒıÓÃjpa¼°mysqlÁ¬½Ó¿â.
+#### ç”±äºSpring booté»˜è®¤å·²ç»é›†æˆäº†Hibernate, æ‰€åœ¨æˆ‘ä»¬åªéœ€åœ¨pom.xmlå¼•ç”¨jpaåŠmysqlè¿æ¥åº“.
 
 <dependency>  
   <groupId>org.springframework.boot</groupId>  
@@ -27,48 +27,48 @@ Jackson 2 is on the classpath×Ô¶¯±»Ñ¡ÔñÓÃÀ´×ª»¯¡£
   <groupId>mysql</groupId>  
   <artifactId>mysql-connector-java</artifactId>  
 </dependency>
-²éÑ¯mysqlÇı¶¯°ü°æ±¾£º https://mvnrepository.com/artifact/mysql/mysql-connector-java
+æŸ¥è¯¢mysqlé©±åŠ¨åŒ…ç‰ˆæœ¬ï¼š https://mvnrepository.com/artifact/mysql/mysql-connector-java
 
-###JPA ÊÇÒ»Ì×¹æ·¶£¬²»ÊÇÒ»Ì×²úÆ· ====> ½âÍÑÁË DAO ²ãµÄ²Ù×÷
-Jpa (Java Persistence API) ÊÇ Sun ¹Ù·½Ìá³öµÄ Java ³Ö¾Ã»¯¹æ·¶¡£
-Ìá¹©Ò»ÖÖ¡¾¶ÔÏó/¹ØÁªÓ³Éä¹¤¾ß¡¿À´¹ÜÀí Java Ó¦ÓÃÖĞµÄ¡¾¹ØÏµÊı¾İ¡¿¡£
-====¡·ÓÃ¼«¼òµÄ´úÂë¼´¿ÉÊµÏÖ¶ÔÊı¾İµÄ·ÃÎÊºÍ²Ù×÷¡£
-====¡·ËüÌá¹©ÁË°üÀ¨ÔöÉ¾¸Ä²éµÈÔÚÄÚµÄ³£ÓÃ¹¦ÄÜ£¬ÇÒÒ×ÓÚÀ©Õ¹¡£
+###JPA æ˜¯ä¸€å¥—è§„èŒƒï¼Œä¸æ˜¯ä¸€å¥—äº§å“ ====> è§£è„±äº† DAO å±‚çš„æ“ä½œ
+Jpa (Java Persistence API) æ˜¯ Sun å®˜æ–¹æå‡ºçš„ Java æŒä¹…åŒ–è§„èŒƒã€‚
+æä¾›ä¸€ç§ã€å¯¹è±¡/å…³è”æ˜ å°„å·¥å…·ã€‘æ¥ç®¡ç† Java åº”ç”¨ä¸­çš„ã€å…³ç³»æ•°æ®ã€‘ã€‚
+====ã€‹ç”¨æç®€çš„ä»£ç å³å¯å®ç°å¯¹æ•°æ®çš„è®¿é—®å’Œæ“ä½œã€‚
+====ã€‹å®ƒæä¾›äº†åŒ…æ‹¬å¢åˆ æ”¹æŸ¥ç­‰åœ¨å†…çš„å¸¸ç”¨åŠŸèƒ½ï¼Œä¸”æ˜“äºæ‰©å±•ã€‚
 
-##JPAÓµÓĞÄÄĞ©×¢½â:
-@Entity  ÉùÃ÷ÀàÎªÊµÌå»ò±í
-@Table  ÉùÃ÷±íÃû¡£
-@Id  Ö¸¶¨µÄÀàµÄÊôĞÔ£¬ÓÃÓÚÊ¶±ğ£¨Ò»¸ö±íÖĞµÄÖ÷¼ü£©¡£
-@Column  Ö¸¶¨³Ö¾ÃÊôĞÔÀ¸ÊôĞÔ¡£
+##JPAæ‹¥æœ‰å“ªäº›æ³¨è§£:
+@Entity  å£°æ˜ç±»ä¸ºå®ä½“æˆ–è¡¨
+@Table  å£°æ˜è¡¨åã€‚
+@Id  æŒ‡å®šçš„ç±»çš„å±æ€§ï¼Œç”¨äºè¯†åˆ«ï¼ˆä¸€ä¸ªè¡¨ä¸­çš„ä¸»é”®ï¼‰ã€‚
+@Column  æŒ‡å®šæŒä¹…å±æ€§æ å±æ€§ã€‚
 
 
-## »ù±¾²éÑ¯£º 2ÖÖ·½·¨
-# 1.Ä¬ÈÏ·½·¨ ¡£ SpringBoot JPAÄ¬ÈÏÔ¤ÏÈÉú³ÉÁËÒ»Ğ©CRUDµÄ·½·¨¡£
-* ĞèÒª ¼Ì³ĞJpaRepository
+## åŸºæœ¬æŸ¥è¯¢ï¼š 2ç§æ–¹æ³•
+# 1.é»˜è®¤æ–¹æ³• ã€‚ SpringBoot JPAé»˜è®¤é¢„å…ˆç”Ÿæˆäº†ä¸€äº›CRUDçš„æ–¹æ³•ã€‚
+* éœ€è¦ ç»§æ‰¿JpaRepository
 public interface UserRepository extends JpaRepository<User, Long> {
   @Test
   public void testBaseQuery() throws Exception {
   User user=new User();
-  userRepository.findAll();  //Ä¬ÈÏ·½·¨
+  userRepository.findAll();  //é»˜è®¤æ–¹æ³•
   userRepository.save(user);
   }
 }
 
-# 2.¸ù¾İ²éÑ¯·½·¨£¬×Ô¶¯Éú³É½âÎö³É SQL ¡£
-* ×Ô¶¨µÄ¼òµ¥²éÑ¯ ====> ¸ù¾İ·½·¨ÃûÀ´×Ô¶¯Éú³É SQL
-(Óï·¨ÊÇfindXXBy,readAXXBy,queryXXBy,countXXBy, getXXByºóÃæ¸úÊôĞÔÃû³ÆXX)
+# 2.æ ¹æ®æŸ¥è¯¢æ–¹æ³•ï¼Œè‡ªåŠ¨ç”Ÿæˆè§£ææˆ SQL ã€‚
+* è‡ªå®šçš„ç®€å•æŸ¥è¯¢ ====> æ ¹æ®æ–¹æ³•åæ¥è‡ªåŠ¨ç”Ÿæˆ SQL
+(è¯­æ³•æ˜¯findXXBy,readAXXBy,queryXXBy,countXXBy, getXXByåé¢è·Ÿå±æ€§åç§°XX)
   User findByUserNameOrEmail(String username, String email);
   Long deleteById(Long id);
 
-* ¸´ÔÓ²éÑ¯£¨·ÖÒ³¡¢É¾Ñ¡¡¢Á¬±íµÈ²éÑ¯£©
-* JPA°ïÎÒÃÇÊµÏÖÁË·ÖÒ³¹¦ÄÜ£¬²éÑ¯µÄÊ±ºò£¬´«Èë²ÎÊıPageable¼È¿É¡£
+* å¤æ‚æŸ¥è¯¢ï¼ˆåˆ†é¡µã€åˆ é€‰ã€è¿è¡¨ç­‰æŸ¥è¯¢ï¼‰
+* JPAå¸®æˆ‘ä»¬å®ç°äº†åˆ†é¡µåŠŸèƒ½ï¼ŒæŸ¥è¯¢çš„æ—¶å€™ï¼Œä¼ å…¥å‚æ•°Pageableæ—¢å¯ã€‚
   Pageable pageable = new PageRequest(page, size, sort);
   Page<User> findALL(Pageable pageable);
   Page<User> findByUserName(String userName,Pageable pageable);
   
 
-* ÔÚSQL²éÑ¯·½·¨ÉÏ£¬Ê¹ÓÃ@Query×¢½â£¬ÔÚÉ¾³ı¡¢ĞŞ¸ÄÉÏ¼ÓÉÏ@Modifying
-* Ìí¼Ó @Transactional¶ÔÊÂÎïµÄÖ§³Ö£¬²éÑ¯³¬Ê±µÄÉèÖÃ
+* åœ¨SQLæŸ¥è¯¢æ–¹æ³•ä¸Šï¼Œä½¿ç”¨@Queryæ³¨è§£ï¼Œåœ¨åˆ é™¤ã€ä¿®æ”¹ä¸ŠåŠ ä¸Š@Modifying
+* æ·»åŠ  @Transactionalå¯¹äº‹ç‰©çš„æ”¯æŒï¼ŒæŸ¥è¯¢è¶…æ—¶çš„è®¾ç½®
 
 @Modifying
 @Query("update User u set u.userName = ?1 where u.id = ?2")
@@ -83,14 +83,14 @@ void deleteByUserId(Long id);
 @Query("select u from User u where u.emailAddress = ?1")
 User findByEmailAddress(String emailAddress)
 
-* ¶à±í²éÑ¯£¨Á½ÖÖ·½Ê½1.ÀûÓÃ Hibernate µÄ¼¶Áª²éÑ¯À´ÊµÏÖ£» 2.´´½¨Ò»¸ö½á¹û¼¯µÄ½Ó¿ÚÀ´½ÓÊÕÁ¬±í²éÑ¯ºóµÄ½á¹û£©
+* å¤šè¡¨æŸ¥è¯¢ï¼ˆä¸¤ç§æ–¹å¼1.åˆ©ç”¨ Hibernate çš„çº§è”æŸ¥è¯¢æ¥å®ç°ï¼› 2.åˆ›å»ºä¸€ä¸ªç»“æœé›†çš„æ¥å£æ¥æ¥æ”¶è¿è¡¨æŸ¥è¯¢åçš„ç»“æœï¼‰
 
-### Á¬½ÓDB£º2ÖÖ·½Ê½
-####1.Ê¹ÓÃJdbcTemplate£¬  <artifactId>mysql-connector-java
+### è¿æ¥DBï¼š2ç§æ–¹å¼
+####1.ä½¿ç”¨JdbcTemplateï¼Œ  <artifactId>mysql-connector-java
 List<Map<String, Object>> list = jdbcTemplate.queryForList(sql);
 for (Map<String, Object> map : list)
 
-####2.m¼¯³ÉMybatis   <artifactId>mybatis-spring-boot-starter
+####2.mé›†æˆMybatis   <artifactId>mybatis-spring-boot-starter
 
 
 
