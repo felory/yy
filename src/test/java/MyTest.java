@@ -7,6 +7,7 @@ import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.junit.jupiter.api.Test;
+import redis.clients.jedis.Jedis;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -66,5 +67,13 @@ public class MyTest {
 
         state.close();
         conn.close();
+    }
+
+    @Test
+    public void testRedis(){
+        Jedis jedis = new Jedis("localhost", 6379);
+        jedis.set("key", "first Java connect!");
+        String value = jedis.get("key");
+        System.out.println(value);
     }
 }
