@@ -51,16 +51,16 @@ public class MyTest {
     }
 
     @Test
-    public void testMysql() throws Exception{
+    public void testMysqlByJava() throws Exception{
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","123456");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test1","root","0000");
         Statement state = conn.createStatement();
-        int rows = state.executeUpdate("INSERT INTO `testTable` VALUES ('test2')");
+        int rows = state.executeUpdate("INSERT INTO `person` VALUES (null,'test22',12)");
 
         if(rows > 0) {
             System.out.println("数据添加成功！");
         }
-        ResultSet resultSet = state.executeQuery("select * from testTable");
+        ResultSet resultSet = state.executeQuery("select * from person");
         while (resultSet.next()){
             System.out.println(resultSet.getString("name"));
         }

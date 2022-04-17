@@ -1,12 +1,14 @@
 package com.ww.yy.repository;
 
 import com.ww.yy.model.User;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+//import org.springframework.data.jpa.repository.JpaRepository;
 
 //must be abstract function ==> such as interface
-public interface UserRepository extends JpaRepository<User, Long> {
+@Repository
+public class UserRepository{
 
-    User findByUserName(String userName); //JPA根据方法名自动生成SQL
+//    public User findByUserName(String userName); //JPA根据方法名自动生成SQL
 }
 
 
